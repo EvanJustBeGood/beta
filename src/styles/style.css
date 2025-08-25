@@ -1,0 +1,762 @@
+/* Переменные для цветов и общих значений */
+:root {
+    --dark-bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --purple: #8e2de2;
+    --light-purple: #c060ee;
+    --text-color: #f0f0f0;
+    --light-text: #b0b0b0;
+    --border-color: #3a3a3a;
+}
+
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Общий контейнер для контента */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для шапки сайта */
+.main-header {
+    background-color: var(--dark-bg);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.logo-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.main-nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--purple);
+}
+
+.main-nav .login-link {
+    background-color: var(--purple);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav .login-link:hover {
+    background-color: var(--light-purple);
+}
+
+/* Секция героя (верхний баннер) */
+.hero-section {
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    padding: 80px 0 120px;
+    overflow: hidden; 
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1; 
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+    position: absolute; 
+    bottom: -20px;
+    right: 0;
+    max-width: 43%; 
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transform: translateX(10%);
+}
+
+/* Секция выбора сборки */
+.build-options-section {
+    background-color: var(--dark-bg);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.build-options-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.build-options-section p {
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 40px;
+}
+
+.build-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.option-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 350px; 
+}
+
+.option-card img {
+    max-width: 100%;
+    height: 180px; 
+    object-fit: contain; 
+    margin-bottom: 20px;
+}
+
+.option-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Общие стили для фиолетовых кнопок */
+.purple-button {
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.purple-button:hover {
+    background-color: var(--light-purple);
+    transform: translateY(-2px);
+}
+
+/* Секция особенностей */
+.features-section {
+    background-color: var(--dark-bg);
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item .icon-lg {
+    font-size: 50px;
+    color: var(--purple);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: var(--light-text);
+}
+
+/* Секция популярных сборок ПК */
+.popular-builds-section {
+    background-color: var(--dark-bg);
+    padding: 80px 0;
+}
+
+.popular-builds-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pc-builds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.pc-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pc-card:hover {
+    transform: translateY(-5px);
+}
+
+.pc-card img {
+    max-width: 100%;
+    height: 200px; 
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.pc-card .card-info {
+    text-align: center;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pc-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.pc-card .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 2px 6px;
+}
+
+.stock-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.stock-status.in-stock {
+    background-color: #28a745;
+    color: white;
+}
+
+.stock-status.out-of-stock {
+    background-color: #dc3545;
+    color: white;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+    margin-top: auto; 
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.card-actions .add-to-cart-btn {
+    background-color: var(--purple);
+    color: white;
+}
+
+.card-actions .add-to-cart-btn:hover {
+    background-color: var(--light-purple);
+}
+
+.card-actions .view-details-btn {
+    background-color: var(--dark-bg);
+    color: var(--purple);
+    border: 1px solid var(--purple);
+}
+
+.card-actions .view-details-btn:hover {
+    background-color: var(--purple);
+    color: white;
+}
+
+/* Иконка сердца (лайк) */
+.heart-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+}
+
+.heart-icon.liked {
+    color: #e21c32;
+}
+
+.popular-builds-section .learn-more-btn {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 12px 40px;
+}
+
+/* Модальное окно (общие стили) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.modal-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.modal-specs {
+    flex: 2;
+    text-align: left;
+}
+
+.modal-specs h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.modal-specs .modal-price {
+    font-size: 24px;
+    color: var(--purple);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-specs .stock-status {
+    margin-bottom: 20px;
+}
+
+.modal-specs ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.modal-specs ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 17px;
+}
+
+.modal-specs ul li:last-child {
+    border-bottom: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 12px 20px;
+}
+
+/* Кнопка закрытия модального окна */
+.close-button {
+    color: var(--light-text);
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+/* Стили для страницы входа */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+}
+
+.login-container {
+    background-color: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.login-container h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.login-container p {
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.login-form input[type="email"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: var(--light-text);
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--purple);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.form-options label {
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-options input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--purple); 
+}
+
+.forgot-password-link {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: var(--purple);
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.register-prompt {
+    font-size: 16px;
+    color: var(--light-text);
+}
+
+.register-link {
+    color: var(--purple);
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: var(--light-purple);
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-top: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        max-width: 600px;
+    }
+
+    .modal-image, .modal-specs {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        margin-left: auto; 
+    }
+    .main-nav a {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+    .hero-section {
+        padding: 60px 0 100px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .build-options-grid,
+    .features-grid,
+    .pc-builds-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-builds-section .learn-more-btn {
+        width: 80%;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-specs h3 {
+        font-size: 24px;
+    }
+
+    .modal-specs .modal-price {
+        font-size: 20px;
+    }
+
+    .modal-specs ul li {
+        font-size: 16px;
+    }
+
+    .login-container {
+        padding: 30px 25px;
+    }
+    .login-container h2 {
+        font-size: 30px;
+    }
+    .login-form input {
+        padding: 12px 15px;
+    }
+    .login-button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-nav {
+        margin-left: 0;
+    }
+    .main-nav a {
+        margin: 0 10px;
+    }
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero-section {
+        padding: 40px 0 80px;
+    }
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .option-card img {
+        height: 150px;
+    }
+    .option-card h3 {
+        font-size: 20px;
+    }
+
+    .feature-item .icon-lg {
+        font-size: 40px;
+    }
+    .feature-item h3 {
+        font-size: 18px;
+    }
+
+    .pc-card img {
+        height: 180px;
+    }
+    .pc-card h3 {
+        font-size: 20px;
+    }
+    .pc-card .price {
+        font-size: 18px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+}
