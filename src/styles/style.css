@@ -1,12 +1,13 @@
 /* Переменные для цветов и общих значений */
 :root {
-    --dark-bg: #1a1a1a;
-    --card-bg: #2a2a2a;
-    --purple: #8e2de2;
-    --light-purple: #c060ee;
-    --text-color: #f0f0f0;
-    --light-text: #b0b0b0;
-    --border-color: #3a3a3a;
+    /* Маппинг на tokens.css для минимального diff */
+    --dark-bg: var(--color-bg);
+    --card-bg: var(--color-surface);
+    --purple: var(--color-primary);
+    --light-purple: var(--color-primary-400);
+    --text-color: var(--color-text);
+    --light-text: var(--color-text-muted);
+    --border-color: var(--color-border);
 }
 
 /* Сброс стилей и базовые настройки */
