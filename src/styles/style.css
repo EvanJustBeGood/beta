@@ -359,7 +359,7 @@ button:focus-visible {
 
 .pc-builds-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -830,9 +830,12 @@ button:focus-visible {
     }
 
     .build-options-grid,
-    .features-grid,
-    .pc-builds-grid {
+    .features-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .pc-builds-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .popular-builds-section .learn-more-btn {
@@ -909,6 +912,10 @@ button:focus-visible {
         font-size: 18px;
     }
 
+    .pc-builds-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .pc-card img {
         height: 180px;
     }

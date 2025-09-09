@@ -11,18 +11,18 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: 'tools',
-    title: 'Built by gamers — for gamers.',
-    description: 'Every PC is hand‑assembled by people who know what real gameplay feels like.'
+    title: 'Built by gamers - for gamers.',
+    description: 'Each PC is hand-built by people who know what great gaming feels like.'
   },
   {
     icon: 'check-circle',
-    title: 'Only proven components',
-    description: 'We use high‑quality parts so you can enjoy the best gaming experience.'
+    title: 'Only Verified Components',
+    description: 'We use only high-quality parts so you can enjoy the best gaming experience possible.'
   },
   {
     icon: 'headset',
-    title: 'Your gaming support team',
-    description: 'We’re always here to help when you need it.'
+    title: 'Your Gaming Support Team',
+    description: 'We\'re always ready to assist you whenever you need.'
   }
 ];
 

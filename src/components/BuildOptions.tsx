@@ -15,10 +15,10 @@ const buildOptions: BuildOption[] = [
   {
     id: 'available-now',
     title: 'Available now',
-    description: 'Ready‑to‑ship builds available immediately',
+    description: 'Ready-to-ship builds available immediately',
     image: '/images/option_available_now.svg',
     action: 'choose',
-    buttonText: 'Выбрать'
+    buttonText: 'Choose'
   },
   {
     id: 'configure',
@@ -26,15 +26,15 @@ const buildOptions: BuildOption[] = [
     description: 'Create your ideal configuration',
     image: '/images/option_configure.svg',
     action: 'configure',
-    buttonText: 'Настроить'
+    buttonText: 'Configure'
   },
   {
     id: 'customize',
     title: 'Customize by specs',
-    description: 'Tell us your requirements — we’ll pick the parts',
+    description: 'Tell us your requirements - we\'ll pick the parts',
     image: '/images/option_customize.svg',
     action: 'customize',
-    buttonText: 'Настроить'
+    buttonText: 'Customize'
   }
 ];
 
@@ -74,7 +74,7 @@ const BuildOptions: React.FC = () => {
         <header className="section-header">
           <h2 id="build-options-title">Build the computer of your dreams.</h2>
           <p className="section-description">
-            Customize it yourself or choose from ready‑made solutions.
+            Customize it yourself or choose from ready-made solutions.
           </p>
         </header>
         
@@ -108,7 +108,7 @@ const BuildOptions: React.FC = () => {
                   className="option-button"
                   data-action={option.action}
                 >
-                  {option.buttonText === 'Выбрать' ? 'Choose' : 'Customize'}
+                  {option.buttonText}
                 </Button>
               </div>
             </article>

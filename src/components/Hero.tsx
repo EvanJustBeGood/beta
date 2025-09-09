@@ -15,22 +15,12 @@ const Hero: React.FC = () => {
       <div className="container hero-content">
         <div className="hero-text">
           <h1 id="hero-title">
-            Your personal gateway to high‑performance gaming.
+            Your personal gateway to high-performance gaming.
           </h1>
           <p className="hero-description">
-            Custom‑built gaming PCs focused on stability, power, and comfort.
+            Custom-built gaming PCs focused on stability, power, and comfort.
           </p>
           
-          <div className="hero-actions">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={handleGetStarted}
-              className="hero-cta"
-            >
-              Start building
-            </Button>
-          </div>
         </div>
         
         <div className="hero-image">
