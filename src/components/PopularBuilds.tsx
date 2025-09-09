@@ -18,9 +18,9 @@ const PopularBuilds: React.FC = () => {
   }, []);
 
   return (
-    <section className="popular-builds-section" aria-labelledby="popular-builds-title">
+    <section id="popular-builds" className="popular-builds-section" aria-labelledby="popular-builds-title">
       <div className="container">
-        <h2 id="popular-builds-title">Популярные и практичные сборки ПК</h2>
+        <h2 id="popular-builds-title">Popular & Practical PC Builds</h2>
         
         <div className="pc-builds-grid" role="grid" aria-label="Список сборок ПК">
           {builds.map(build => (
@@ -39,7 +39,7 @@ const PopularBuilds: React.FC = () => {
             onClick={handleLearnMore}
             className="learn-more-btn"
           >
-            Узнать больше
+            Learn more
           </Button>
         </div>
       </div>

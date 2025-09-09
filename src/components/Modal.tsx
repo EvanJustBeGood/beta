@@ -86,14 +86,14 @@ const Modal: React.FC<ModalProps> = ({ build, onClose }) => {
               </p>
               <span 
                 className={`stock-status ${build.inStock ? 'in-stock' : 'out-of-stock'}`}
-                aria-label={build.inStock ? 'В наличии' : 'Нет в наличии'}
+                aria-label={build.inStock ? 'In stock' : 'Out of stock'}
               >
-                {build.inStock ? 'В наличии' : 'Нет в наличии'}
+                {build.inStock ? 'In stock' : 'Out of stock'}
               </span>
             </div>
 
             <div className="specs-list">
-              <h3>Характеристики:</h3>
+              <h3>Specifications:</h3>
               <ul>
                 {build.specs.map((spec, index) => (
                   <li key={index}>{spec}</li>
@@ -109,7 +109,7 @@ const Modal: React.FC<ModalProps> = ({ build, onClose }) => {
                 disabled={!build.inStock}
                 className="add-to-cart-modal-btn"
               >
-                Добавить в корзину
+                Add to cart
               </Button>
               
               <Button
@@ -118,7 +118,7 @@ const Modal: React.FC<ModalProps> = ({ build, onClose }) => {
                 onClick={onClose}
                 className="close-modal-btn"
               >
-                Закрыть
+                Close
               </Button>
             </div>
           </div>

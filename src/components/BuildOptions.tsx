@@ -14,24 +14,24 @@ interface BuildOption {
 const buildOptions: BuildOption[] = [
   {
     id: 'available-now',
-    title: 'Доступно сейчас',
-    description: 'Готовые сборки, доступные для немедленной покупки',
+    title: 'Available now',
+    description: 'Ready‑to‑ship builds available immediately',
     image: '/images/option_available_now.svg',
     action: 'choose',
     buttonText: 'Выбрать'
   },
   {
     id: 'configure',
-    title: 'Настроить мощный ПК',
-    description: 'Создайте свою идеальную конфигурацию',
+    title: 'Configure a powerful PC',
+    description: 'Create your ideal configuration',
     image: '/images/option_configure.svg',
     action: 'configure',
     buttonText: 'Настроить'
   },
   {
     id: 'customize',
-    title: 'Настроить по спецификациям',
-    description: 'Укажите требования, мы подберем компоненты',
+    title: 'Customize by specs',
+    description: 'Tell us your requirements — we’ll pick the parts',
     image: '/images/option_customize.svg',
     action: 'customize',
     buttonText: 'Настроить'
@@ -60,13 +60,21 @@ const BuildOptions: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent, action: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleOptionClick(action);
+    }
+  };
+
   return (
-    <section className="build-options-section" aria-labelledby="build-options-title">
+
+<section id="build-options" className="build-options-section" aria-labelledby="build-options-title">
       <div className="container">
         <header className="section-header">
-          <h2 id="build-options-title">Создайте компьютер своей мечты.</h2>
+          <h2 id="build-options-title">Build the computer of your dreams.</h2>
           <p className="section-description">
-            Настройте его сами или выберите из готовых решений.
+            Customize it yourself or choose from ready‑made solutions.
           </p>
         </header>
         
@@ -76,6 +84,9 @@ const BuildOptions: React.FC = () => {
               key={option.id} 
               className="option-card"
               aria-labelledby={`option-title-${option.id}`}
+              aria-describedby={`option-desc-${option.id}`}
+              tabIndex={0}
+              onKeyDown={(e) => handleKeyDown(e, option.action)}
             >
               <div className="option-image">
                 <img 
@@ -87,16 +98,17 @@ const BuildOptions: React.FC = () => {
               
               <div className="option-content">
                 <h3 id={`option-title-${option.id}`}>{option.title}</h3>
-                <p>{option.description}</p>
+                <p id={`option-desc-${option.id}`}>{option.description}</p>
                 
                 <Button
+                  type="button"
                   variant="primary"
                   size="md"
                   onClick={() => handleOptionClick(option.action)}
                   className="option-button"
                   data-action={option.action}
                 >
-                  {option.buttonText}
+                  {option.buttonText === 'Выбрать' ? 'Choose' : 'Customize'}
                 </Button>
               </div>
             </article>

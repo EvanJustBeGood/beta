@@ -11,24 +11,24 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: 'tools',
-    title: 'Создано геймерами — для геймеров.',
-    description: 'Каждый ПК собирается вручную людьми, которые знают, что такое настоящие игровые ощущения.'
+    title: 'Built by gamers — for gamers.',
+    description: 'Every PC is hand‑assembled by people who know what real gameplay feels like.'
   },
   {
     icon: 'check-circle',
-    title: 'Только проверенные компоненты',
-    description: 'Мы используем только высококачественные детали, чтобы вы могли наслаждаться лучшим игровым опытом.'
+    title: 'Only proven components',
+    description: 'We use high‑quality parts so you can enjoy the best gaming experience.'
   },
   {
     icon: 'headset',
-    title: 'Ваша команда поддержки по играм',
-    description: 'Мы всегда готовы помочь вам, когда вам это понадобится.'
+    title: 'Your gaming support team',
+    description: 'We’re always here to help when you need it.'
   }
 ];
 
 const Features: React.FC = () => {
   return (
-    <section className="features-section" aria-labelledby="features-title">
+    <section id="features" className="features-section" aria-labelledby="features-title">
       <div className="container features-grid">
         {features.map((feature, index) => (
           <article 

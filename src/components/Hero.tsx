@@ -11,15 +11,14 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero-section" aria-labelledby="hero-title">
+    <section id="hero" className="hero-section" aria-labelledby="hero-title">
       <div className="container hero-content">
         <div className="hero-text">
           <h1 id="hero-title">
-            Ваш персональный путь к высокопроизводительным играм.
+            Your personal gateway to high‑performance gaming.
           </h1>
           <p className="hero-description">
-            LunaPC поставляет игровые ПК, собранные вручную людьми, которые знают, 
-            что такое настоящие игровые ощущения.
+            Custom‑built gaming PCs focused on stability, power, and comfort.
           </p>
           
           <div className="hero-actions">
@@ -29,17 +28,20 @@ const Hero: React.FC = () => {
               onClick={handleGetStarted}
               className="hero-cta"
             >
-              Начать сборку
+              Start building
             </Button>
           </div>
         </div>
         
         <div className="hero-image">
-          <img 
-            src="/images/hero_pc.svg" 
-            alt="Высокопроизводительный игровой ПК" 
-            loading="eager"
-          />
+          <picture>
+            <source srcSet="/images/hero_pc.webp" type="image/webp" />
+            <img 
+              src="/images/hero_pc.svg" 
+              alt="Высокопроизводительный игровой ПК" 
+              loading="eager"
+            />
+          </picture>
         </div>
       </div>
     </section>

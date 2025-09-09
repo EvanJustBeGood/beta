@@ -17,11 +17,21 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     font-family: 'Inter', Arial, sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+/* Базовая типографика */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+p, li, small {
+    font-weight: 400;
 }
 
 /* Общий контейнер для контента */
@@ -37,6 +47,8 @@ body {
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
 }
+
+.main-nav { display: flex; align-items: center; gap: 6px; }
 
 .header-content {
     display: flex;
@@ -67,6 +79,19 @@ body {
     font-size: 18px;
     transition: color 0.3s ease;
 }
+/* Недостающие стили для пунктов меню */
+.main-nav .nav-link { padding: 6px 8px; border-radius: 6px; }
+.main-nav .nav-link:hover { color: var(--text-color); background: rgba(255,255,255,0.06); }
+
+/* Кнопки в навигации */
+.nav-button {
+    background: transparent;
+    border: none;
+    color: var(--light-text);
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+}
 
 .main-nav a:hover {
     color: var(--purple);
@@ -83,13 +108,83 @@ body {
 .main-nav .login-link:hover {
     background-color: var(--light-purple);
 }
+/* Доступность: общий стиль фокуса */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--light-purple);
+    outline-offset: 2px;
+}
+
+/* Универсальные кнопки */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+.button-sm { padding: 8px 14px; font-size: 14px; }
+.button-md { padding: 10px 18px; font-size: 16px; }
+.button-lg { padding: 12px 22px; font-size: 18px; }
+
+.button-primary { background: var(--purple); color: #fff; }
+.button-primary:hover { background: var(--light-purple); }
+
+.button-secondary { background: var(--color-surface-2); color: var(--text-color); }
+.button-secondary:hover { background: var(--color-surface); }
+
+.button-outline { background: transparent; color: var(--purple); border-color: var(--purple); }
+.button-outline:hover { background: var(--purple); color: #fff; }
+
+.button-ghost { background: transparent; color: var(--light-text); }
+.button-ghost:hover { color: var(--text-color); }
+
+.button-loading { position: relative; pointer-events: none; opacity: 0.8; }
+.button-spinner {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* Секция героя (верхний баннер) */
 .hero-section {
-    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    /* Слоистый фон: градиент + (опционально) изображение из Figma */
+    background-image:
+      radial-gradient(1200px 600px at 10% 0%, rgba(255, 255, 255, 0.06) 0%, rgba(255,255,255,0) 60%),
+      linear-gradient(90deg, #4a00e0 0%, #8e2de2 100%),
+      url('/images/hero_bg.svg'); /* если добавите файл из Figma, он подложится снизу */
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
     padding: 80px 0 120px;
     overflow: hidden; 
     position: relative;
+}
+
+/* Декоративные "пятна" как в макетах Figma без изображений */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.hero-section::before {
+    top: -80px; left: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.25), rgba(255,255,255,0));
+}
+.hero-section::after {
+    bottom: -100px; right: -100px;
+    width: 420px; height: 420px;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.20), rgba(255,255,255,0));
 }
 
 .hero-content {
@@ -134,6 +229,9 @@ body {
     transform: translateX(10%);
 }
 
+.hero-actions { margin-top: 24px; }
+.hero-cta { box-shadow: var(--shadow-md); }
+
 /* Секция выбора сборки */
 .build-options-section {
     background-color: var(--dark-bg);
@@ -167,6 +265,8 @@ body {
     align-items: center;
     justify-content: space-between;
     min-height: 350px; 
+    border: 1px solid var(--border-color);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .option-card img {
@@ -179,6 +279,18 @@ body {
 .option-card h3 {
     font-size: 24px;
     margin-bottom: 20px;
+}
+
+.option-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.option-card:focus-within,
+.option-card:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--light-purple);
 }
 
 /* Общие стили для фиолетовых кнопок */
@@ -218,6 +330,11 @@ body {
     color: var(--purple);
     margin-bottom: 20px;
 }
+
+/* Иконки как компонент */
+.icon-sm { font-size: 14px; }
+.icon-md { font-size: 18px; }
+.icon-lg { font-size: 28px; }
 
 .feature-item h3 {
     font-size: 22px;
@@ -271,7 +388,7 @@ body {
     margin-bottom: 15px;
 }
 
-.pc-card .card-info {
+.pc-card .card-content {
     text-align: center;
     flex-grow: 1; 
     display: flex;
@@ -280,12 +397,12 @@ body {
     width: 100%;
 }
 
-.pc-card h3 {
+.pc-card .card-title {
     font-size: 22px;
     margin-bottom: 10px;
 }
 
-.pc-card .price {
+.pc-card .card-price {
     font-size: 20px;
     font-weight: bold;
     color: var(--purple);
@@ -383,6 +500,19 @@ body {
     color: #e21c32;
 }
 
+/* Кнопка избранного (новая разметка) */
+.favorite-button {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--border-color);
+    color: var(--light-text);
+    border-radius: 999px;
+    padding: 8px;
+    cursor: pointer;
+}
+.favorite-button.liked { color: #e21c32; border-color: #e21c32; background: rgba(226,28,50,0.1); }
+
 .popular-builds-section .learn-more-btn {
     display: block;
     margin: 0 auto;
@@ -390,23 +520,17 @@ body {
     padding: 12px 40px;
 }
 
-/* Модальное окно (общие стили) */
-.modal {
-    display: none;
+.section-actions { text-align: center; }
+
+/* Модальное окно (обновленная разметка) */
+.modal-overlay {
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    inset: 0;
     background-color: rgba(0,0,0,0.8);
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.modal.show {
-    display: flex;
 }
 
 .modal-content {
@@ -426,6 +550,21 @@ body {
     display: flex;
     gap: 30px;
     width: 100%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.modal-close {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--light-text);
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
 }
 
 .modal-image {
@@ -504,6 +643,29 @@ body {
     color: var(--purple);
     text-decoration: none;
 }
+
+/* Build Options (новые элементы) */
+.option-image { width: 100%; display: flex; justify-content: center; }
+.option-content { margin-top: 12px; }
+.option-button { margin-top: 12px; }
+
+/* Header badge позиционирование поверх иконки */
+.nav-button .badge {
+    position: absolute;
+    top: -6px; right: -6px;
+}
+
+/* Login (новые классы) */
+.login-header { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--light-text); text-decoration: none; }
+.back-link:hover { color: var(--purple); }
+.form-group { text-align: left; margin-bottom: 16px; }
+.form-label { display: block; margin-bottom: 6px; color: var(--light-text); }
+.form-input { width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: 8px; background: #3a3a3a; color: var(--text-color); }
+.form-input.error { border-color: var(--danger, #dc3545); }
+.error-message { display: block; margin-top: 6px; color: #ff6b6b; font-size: 12px; }
+.checkbox-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.checkmark { width: 16px; height: 16px; border-radius: 3px; }
 
 /* Стили для страницы входа */
 .login-page {
@@ -648,13 +810,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .main-nav {
-        margin-left: auto; 
-    }
+    .main-nav { margin-left: auto; gap: 4px; }
     .main-nav a {
         margin-left: 15px;
         font-size: 16px;
     }
+    .nav-button { margin-left: 12px; }
+    .login-link { padding: 6px 12px; }
 
     .hero-section {
         padding: 60px 0 100px;
@@ -713,12 +875,12 @@ body {
         flex-direction: column;
         gap: 15px;
     }
-    .main-nav {
-        margin-left: 0;
-    }
+    .main-nav { margin-left: 0; flex-wrap: wrap; justify-content: center; }
     .main-nav a {
         margin: 0 10px;
     }
+    .nav-button { margin-left: 0; }
+    .login-link { margin-top: 6px; }
     .logo {
         font-size: 24px;
     }

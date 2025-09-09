@@ -1,0 +1,25 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4A00E0" />
+      <stop offset="100%" stop-color="#8E2DE2" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 120) rotate(45) scale(560 360)">
+      <stop stop-color="white" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1720 960) rotate(15) scale(620 420)">
+      <stop stop-color="white" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#g1)"/>
+
+  <ellipse cx="300" cy="140" rx="520" ry="320" fill="url(#glow1)"/>
+  <ellipse cx="1680" cy="940" rx="600" ry="400" fill="url(#glow2)"/>
+
+  <g opacity="0.15">
+    <path d="M0 820 C 320 700, 640 960, 960 860 C 1280 760, 1600 980, 1920 860 L 1920 1080 L 0 1080 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

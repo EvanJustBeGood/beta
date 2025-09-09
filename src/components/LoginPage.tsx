@@ -87,14 +87,14 @@ const LoginPage: React.FC = () => {
     <div className="login-page">
       <div className="login-container">
         <header className="login-header">
-          <Link to="/" className="back-link" aria-label="Вернуться на главную">
+          <Link to="/" className="back-link" aria-label="Back to home">
             <Icon name="arrow-left" size="md" />
-            <span>Назад</span>
+            <span>Back</span>
           </Link>
           
-          <h1>Войти</h1>
+          <h1>Sign in</h1>
           <p className="login-description">
-            Добро пожаловать в LunaPC. Пожалуйста, войдите в свой аккаунт.
+            Welcome to LunaPC. Please sign in to your account.
           </p>
         </header>
 
@@ -123,7 +123,7 @@ const LoginPage: React.FC = () => {
 
           <div className="form-group">
             <label htmlFor="password" className="form-label">
-              Пароль
+              Password
             </label>
             <input
               id="password"
@@ -152,11 +152,11 @@ const LoginPage: React.FC = () => {
                 onChange={handleInputChange}
               />
               <span className="checkmark"></span>
-              Запомнить меня
+              Remember me
             </label>
             
             <button type="button" className="forgot-password-link">
-              Забыли пароль?
+              Forgot password?
             </button>
           </div>
 
@@ -168,15 +168,15 @@ const LoginPage: React.FC = () => {
             className="login-button"
             disabled={isLoading}
           >
-            {isLoading ? 'Вход...' : 'Войти'}
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </Button>
         </form>
 
         <footer className="login-footer">
           <p className="register-prompt">
-            Нет аккаунта?{' '}
+            Don’t have an account?{' '}
             <Link to="/" className="register-link">
-              Зарегистрироваться
+              Sign up
             </Link>
           </p>
         </footer>
