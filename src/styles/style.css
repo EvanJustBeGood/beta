@@ -20,7 +20,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Exo 2', Arial, sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
@@ -63,6 +63,8 @@ p, li, small {
     font-size: 28px;
     font-weight: bold;
     color: var(--text-color);
+    font-family: 'Gajraj One', cursive;
+    text-decoration: none;
 }
 
 .logo-image {
@@ -86,6 +88,10 @@ p, li, small {
 
 .main-nav a:hover {
     color: var(--purple);
+}
+
+.logo:hover {
+    text-decoration: none;
 }
 
 .main-nav .nav-button {
@@ -150,79 +156,38 @@ button:focus-visible {
 
 /* Секция героя (верхний баннер) */
 .hero-section {
-    /* Слоистый фон: градиент + (опционально) изображение из Figma */
-    background-image:
-      radial-gradient(1200px 600px at 10% 0%, rgba(255, 255, 255, 0.06) 0%, rgba(255,255,255,0) 60%),
-      linear-gradient(90deg, #4a00e0 0%, #8e2de2 100%),
-      url('/images/hero_bg.svg'); /* если добавите файл из Figma, он подложится снизу */
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: cover, cover, cover;
-    background-position: center, center, center;
-    padding: 80px 0 120px;
+    background-image: url('/images/Group 20.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    padding: 40px 0 200px;
+    min-height: 80vh;
     overflow: hidden; 
     position: relative;
 }
 
-/* Декоративные "пятна" как в макетах Figma без изображений */
-.hero-section::before,
-.hero-section::after {
-    content: '';
-    position: absolute;
-    filter: blur(60px);
-    opacity: 0.5;
-    pointer-events: none;
-}
-.hero-section::before {
-    top: -80px; left: -80px;
-    width: 320px; height: 320px;
-    background: radial-gradient(closest-side, rgba(255,255,255,0.25), rgba(255,255,255,0));
-}
-.hero-section::after {
-    bottom: -100px; right: -100px;
-    width: 420px; height: 420px;
-    background: radial-gradient(closest-side, rgba(255,255,255,0.20), rgba(255,255,255,0));
-}
 
 .hero-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
+    min-height: 60vh;
+    padding-top: 40px;
 }
 
-.hero-text {
-    flex: 1;
-    text-align: left;
-    max-width: 50%;
-    padding-right: 40px;
+.hero-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-text p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-image {
-    flex: 1;
-    text-align: right;
-    position: absolute; 
-    bottom: -20px;
-    right: 0;
-    max-width: 43%; 
-}
-
-.hero-image img {
+.hero-frame img {
     max-width: 100%;
     height: auto;
     display: block;
-    transform: translateX(10%);
 }
 
 .hero-actions { margin-top: 24px; }
@@ -232,18 +197,20 @@ button:focus-visible {
 .build-options-section {
     background-color: var(--dark-bg);
     padding: 80px 0;
-    text-align: center;
 }
 
 .build-options-section h2 {
     font-size: 36px;
     margin-bottom: 15px;
+    font-weight: 500;
+    text-align: left;
 }
 
 .build-options-section p {
     font-size: 18px;
     color: var(--light-text);
     margin-bottom: 40px;
+    text-align: left;
 }
 
 .build-options-grid {
@@ -349,8 +316,9 @@ button:focus-visible {
 
 .popular-builds-section h2 {
     font-size: 36px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 40px;
+    font-weight: 500;
 }
 
 .pc-builds-grid {

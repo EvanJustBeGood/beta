@@ -13,25 +13,12 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="hero-section" aria-labelledby="hero-title">
       <div className="container hero-content">
-        <div className="hero-text">
-          <h1 id="hero-title">
-            Your personal gateway to high-performance gaming.
-          </h1>
-          <p className="hero-description">
-            Custom-built gaming PCs focused on stability, power, and comfort.
-          </p>
-          
-        </div>
-        
-        <div className="hero-image">
-          <picture>
-            <source srcSet="/images/hero_pc.webp" type="image/webp" />
-            <img 
-              src="/images/hero_pc.svg" 
-              alt="Высокопроизводительный игровой ПК" 
-              loading="eager"
-            />
-          </picture>
+        <div className="hero-frame">
+          <img 
+            src="/images/Frame 4.png" 
+            alt="LunaPC Frame" 
+            loading="eager"
+          />
         </div>
       </div>
     </section>
