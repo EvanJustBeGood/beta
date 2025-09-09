@@ -83,30 +83,26 @@ p, li, small {
 .main-nav .nav-link { padding: 6px 8px; border-radius: 6px; }
 .main-nav .nav-link:hover { color: var(--text-color); background: rgba(255,255,255,0.06); }
 
-/* Кнопки в навигации */
-.nav-button {
+
+.main-nav a:hover {
+    color: var(--purple);
+}
+
+.main-nav .nav-button {
     background: transparent;
     border: none;
     color: var(--light-text);
     margin-left: 20px;
     cursor: pointer;
     position: relative;
+    padding: 8px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.main-nav a:hover {
-    color: var(--purple);
-}
-
-.main-nav .login-link {
-    background-color: var(--purple);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.main-nav .login-link:hover {
-    background-color: var(--light-purple);
+.main-nav .nav-button:hover {
+    color: var(--text-color);
+    background: rgba(255,255,255,0.06);
 }
 /* Доступность: общий стиль фокуса */
 a:focus-visible,

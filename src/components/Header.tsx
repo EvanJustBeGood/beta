@@ -17,11 +17,6 @@ const Header: React.FC = () => {
         </Link>
         
         <nav className="main-nav" aria-label="Primary navigation">
-          <a href="#hero" className="nav-link">Home</a>
-          <a href="#build-options" className="nav-link">Builds</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#popular-builds" className="nav-link">Popular</a>
-
           <button type="button" className="nav-button" aria-label="Favorites">
             <Icon name="heart" size="md" />
             {favorites.length > 0 && (
@@ -42,9 +37,10 @@ const Header: React.FC = () => {
           
           <NavLink
             to="/login"
-            className={({ isActive }) => `login-link ${isActive ? 'active' : ''}`}
+            className={({ isActive }) => `nav-button ${isActive ? 'active' : ''}`}
+            aria-label="User profile"
           >
-            Sign in
+            <Icon name="user" size="md" />
           </NavLink>
         </nav>
       </div>
